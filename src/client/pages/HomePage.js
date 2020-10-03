@@ -17,6 +17,7 @@ import {
   faVolumeUp,
   faWindowClose
 } from '@fortawesome/free-solid-svg-icons';
+import ThemeContext from '../context/themeTextColor';
 /*
 setInterval(()=>{
   console.log("dedededed", window.performance.memory.totalJSHeapSize)
@@ -107,14 +108,16 @@ Gracias por leer mi relato`
   },
   {
     id: '013',
-    title: 'Anécdota 12',
+    title: 'Anécdota 12.1',
     byUser: 'anonimous',
     text: `Una vez nos tocó ver sobre un accidente en motocicleta de una amigo de mi papá al señor no le pasó nada pero el acompañante falleció en el accidente a los 9 días fueron a levantar el alma ahí donde fue el accidente nos contó el señor que sentía el peso de su amigo en el hombro cuando fueron a levantarlo.`
-  },
+  }
 ];
 
 const HomePage = props => {
   const [searchValue, setSearchValue] = useState('');
+
+  const [currentScrolltop, setCurrentScrolltop] = useState(0);
 
   useEffect(() => {
     setHistoriesArray(
@@ -178,122 +181,149 @@ const HomePage = props => {
 
   return (
     <div id="historyScreen" style={sectionStyle}>
-      <div
-        className={isNil(currentHistoryData) ? 'basic-box-color' : 'read-box-color'}
-        style={{
-          width: '90%',
-          height: '80%',
-          //padding: '10% 7%',
-          //margin: '0 auto',
-          opacity: '.95',
-          position: 'absolute',
-          top: '10%',
-          left: '5%'
-        }}
-      >
-        <div style={{ padding: '1% 2%', display: 'flex', flexDirection: 'row' }}>
-          {isNil(currentHistoryData) && (
-            <div style={{ padding: '0 2%' }}>
+      <ThemeContext.Consumer>
+        {themeColorId => (
+          <div
+            className={
+              isNil(currentHistoryData)
+                ? themeColorId === 0
+                  ? 'basic-box-color-night'
+                  : 'basic-box-color-sun'
+                : themeColorId === 0
+                ? 'read-box-color-night'
+                : 'read-box-color-sun'
+            }
+            style={{
+              width: '90%',
+              height: '80%',
+              //padding: '10% 7%',
+              //margin: '0 auto',
+              opacity: '.95',
+              position: 'absolute',
+              top: '10%',
+              left: '5%'
+            }}
+          >
+            <div style={{ padding: '1% 2%', display: 'flex', flexDirection: 'row' }}>
+              {isNil(currentHistoryData) && (
+                <div style={{ padding: '0 2%' }}>
+                  <CustomInput
+                    id="uno"
+                    value={searchValue}
+                    placeholder="Buscar"
+                    textFieldColor={themeColorId === 0 ? 'white' : '#0c0b0b'}
+                    onChange={(event, value) => {
+                      setSearchValue(value);
+                    }}
+                    onBlur={() => {}}
+                  />
+                </div>
+              )}
+
+              {/*<div style={{ padding: '0 2%' }}>
               <CustomInput
-                id="uno"
+                id="dos"
                 value={searchValue}
-                placeholder="Buscar"
+                placeholder="Buscar 2"
                 onChange={(event, value) => {
                   setSearchValue(value);
                 }}
                 onBlur={() => {}}
               />
             </div>
-          )}
+            <div style={{ padding: '0 2%' }}>
+              <CustomInput
+                id="tres"
+                value={searchValue}
+                placeholder="Buscar 3"
+                onChange={(event, value) => {
+                  setSearchValue(value);
+                }}
+                onBlur={() => {}}
+              />
+            </div>
+            */}
+            </div>
+            <div
+              id="text-box"
+              style={{ padding: '1% 2%', width: '95%', height: '78%', overflowY: 'auto' }}
+            >
+              {//searchValue
 
-          {/*<div style={{ padding: '0 2%' }}>
-            <CustomInput
-              id="dos"
-              value={searchValue}
-              placeholder="Buscar 2"
-              onChange={(event, value) => {
-                setSearchValue(value);
-              }}
-              onBlur={() => {}}
-            />
-          </div>
-          <div style={{ padding: '0 2%' }}>
-            <CustomInput
-              id="tres"
-              value={searchValue}
-              placeholder="Buscar 3"
-              onChange={(event, value) => {
-                setSearchValue(value);
-              }}
-              onBlur={() => {}}
-            />
-          </div>
-          */}
-        </div>
-        <div style={{ padding: '1% 2%', width: '95%', height: '78%', overflowY: 'auto' }}>
-          {//searchValue
-
-          isNil(currentHistoryData) ? (
-            isNil(historiesArray) === false &&
-            isEmpty(historiesArray) === false &&
-            historiesArray.filter(filterBy(searchValue)).map(item => {
-              return (
+              isNil(currentHistoryData) ? (
+                isNil(historiesArray) === false &&
+                isEmpty(historiesArray) === false &&
+                historiesArray.filter(filterBy(searchValue)).map(item => {
+                  return (
+                    <div
+                      id={item.id}
+                      key={item.id}
+                      onClick={() => {
+                        setCurrentScrolltop(document.getElementById('text-box').scrollTop);
+                        onGetHistoryData(item.id);
+                        setTimeout(() => {
+                          document.getElementById('text-box').scroll(0, 0);
+                        }, 500);
+                      }}
+                      style={{
+                        display: 'inline-block',
+                        padding: '0 2%',
+                        margin: '0 5px',
+                        color: themeColorId === 0 ? 'white' : 'black',
+                        width: '25%',
+                        minWidth: '150px'
+                      }}
+                    >
+                      <h4>{item.title}</h4>
+                      <p>{item.description}</p>
+                      <hr />
+                    </div>
+                  );
+                })
+              ) : (
                 <div
-                  onClick={() => {
-                    onGetHistoryData(item.id);
-                  }}
                   style={{
-                    display: 'inline-block',
+                    display: 'inline',
                     padding: '0 2%',
                     margin: '0 5px',
-                    color: 'white',
-                    width: '25%',
+                    width: '90%',
                     minWidth: '150px'
                   }}
+                  className={
+                    isNil(currentHistoryData) ? 'text-basic-box-color' : 'read-text-basic-box-color'
+                  }
                 >
-                  <h4>{item.title}</h4>
-                  <p>{item.description}</p>
-                  <hr />
+                  <div title="Cerrar" style={{}}>
+                    <div
+                      style={{
+                        backgroundColor: 'rgb(95 40 130)',
+                        textAlign: 'end',
+                        color: 'white',
+                        borderRadius: '4px',
+                        padding: '10px'
+                      }}
+                      onClick={() => {
+                        document.getElementById('text-box').scroll(0, 0);
+                        setCurrentHistoryData(null);
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faWindowClose} />
+                    </div>
+                  </div>
+                  <div style={{ color: themeColorId === 0 ? 'white' : 'black' }}>
+                    <h3>{currentHistoryData.title}</h3>
+                    <p
+                      style={{ textAlign: 'justify', textJustify: 'inter-word', fontSize: '1.2em' }}
+                    >
+                      {currentHistoryData.text}
+                    </p>
+                  </div>
                 </div>
-              );
-            })
-          ) : (
-            <div
-              style={{
-                display: 'inline',
-                padding: '0 2%',
-                margin: '0 5px',
-                width: '90%',
-                minWidth: '150px'
-              }}
-              className={
-                isNil(currentHistoryData) ? 'text-basic-box-color' : 'read-text-basic-box-color'
-              }
-            >
-              <div title="Cerrar" style={{}}>
-                <div
-                  style={{
-                    backgroundColor: 'rgb(95 40 130)',
-                    textAlign: 'end',
-                    color: 'white',
-                    borderRadius: '4px',
-                    padding: '10px'
-                  }}
-                  onClick={() => {
-                    setCurrentHistoryData(null);
-                  }}
-                >
-                  <FontAwesomeIcon icon={faWindowClose} />
-                </div>
-              </div>
-              <h3>{currentHistoryData.title}</h3>
-              <p style={{ textAlign: 'justify', textJustify: 'inter-word', fontSize: '1.2em' }}>
-                {currentHistoryData.text}
-              </p>
+              )}
             </div>
-          )}
-        </div>
-      </div>
+          </div>
+        )}
+      </ThemeContext.Consumer>
     </div>
   );
 };

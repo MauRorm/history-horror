@@ -4,14 +4,20 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Sound from '../sounds/trackOne.mp3';
 import Sound2 from '../sounds/Recording_136.m4a';
 import Sound3 from '../sounds/Recording_137.m4a';
 import Sound4 from '../sounds/Recording_139.m4a';
 import Sound5 from '../sounds/Recording_141.m4a';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faVolumeMute, faVolumeUp, faPalette } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCoffee,
+  faVolumeMute,
+  faVolumeUp,
+  faPalette,
+  faSun,
+  faMoon
+} from '@fortawesome/free-solid-svg-icons';
 
 const Header = props => {
   const [isActivateAudio, setIsActivateAudio] = useState(false);
@@ -36,9 +42,11 @@ const Header = props => {
             borderRadius: '4px',
             padding: '10px'
           }}
-          onClick={() => {}}
+          onClick={() => {
+            props.onClickThemeText();
+          }}
         >
-          <FontAwesomeIcon icon={faPalette} />
+          <FontAwesomeIcon icon={props.themeTextColor === 0 ? faMoon : faSun} />
         </div>
       </div>
 
@@ -84,22 +92,20 @@ const Header = props => {
 
 const BackgroundAudioComponent = props => {
   const { isActivateAudio, onclickPlayer } = props;
-  let SoundObject = new Audio(Sound);
   let SoundObject2 = new Audio(Sound2);
   let SoundObject3 = new Audio(Sound3);
   let SoundObject4 = new Audio(Sound4);
   let SoundObject5 = new Audio(Sound5);
-  
 
   useEffect(() => {
     //SoundObject.play();
-    setTimeout(()=>{
+    setTimeout(() => {
       SoundObject4.play();
-      setTimeout(()=>{
+      setTimeout(() => {
         SoundObject5.play();
-        setTimeout(()=>{
+        setTimeout(() => {
           SoundObject3.play();
-          setTimeout(()=>{
+          setTimeout(() => {
             SoundObject2.play();
           }, 40000);
         }, 63000);
@@ -119,7 +125,7 @@ const BackgroundAudioComponent = props => {
       onClick={() => {
         onclickPlayer();
         if (isActivateAudio) {
-          alert(1)
+          alert(1);
           SoundObject.pause();
           SoundObject.currentTime = 0;
           //SoundObject = null;

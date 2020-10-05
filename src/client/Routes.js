@@ -1,6 +1,7 @@
 import HomePage from './pages/HomePage';
 import Contact from './pages/Contact';
 import NotFoundPage from './pages/NotFoundPage';
+import AboutUs from './pages/aboutUs';
 import App from './App';
 import React from 'react';
 
@@ -15,7 +16,7 @@ export default [
       },
       {
         path: '/about',
-        component: HomePage,
+        component: AboutUs,
         exact: true
       },
       {

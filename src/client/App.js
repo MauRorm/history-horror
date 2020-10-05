@@ -64,6 +64,13 @@ const App = ({ route }) => {
                       </Link>
                     </li>
                   </a>
+                  <a>
+                    <li>
+                      <Link to="/contact" className="link">
+                        v.0.1
+                      </Link>
+                    </li>
+                  </a>
                 </ul>
               </div>
             </nav>

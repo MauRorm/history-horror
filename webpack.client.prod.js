@@ -14,7 +14,7 @@ const config = {
   // Tell webpack where to put output file
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'build2'),
     publicPath: '/'
   },
   stats: {

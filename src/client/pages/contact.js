@@ -114,7 +114,7 @@ Gracias por leer mi relato`
   }
 ];
 
-const HomePage = props => {
+const Contact = props => {
   const [searchValue, setSearchValue] = useState(
     isNil(sessionStorage.getItem('searchHistory')) ? '' : sessionStorage.getItem('searchHistory')
   );
@@ -206,124 +206,7 @@ const HomePage = props => {
               left: '5%'
             }}
           >
-            <div style={{ padding: '1% 2%', display: 'flex', flexDirection: 'row' }}>
-              {isNil(currentHistoryData) && (
-                <div style={{ padding: '0 2%' }}>
-                  <CustomInput
-                    id="uno"
-                    value={searchValue}
-                    placeholder="Buscar"
-                    textFieldColor={themeColorId === 0 ? 'white' : '#0c0b0b'}
-                    onChange={(event, value) => {
-                      setSearchValue(value);
-                      sessionStorage.setItem('searchHistory', value);
-                    }}
-                    onBlur={(event, value) => {}}
-                  />
-                </div>
-              )}
-
-              {/*<div style={{ padding: '0 2%' }}>
-              <CustomInput
-                id="dos"
-                value={searchValue}
-                placeholder="Buscar 2"
-                onChange={(event, value) => {
-                  setSearchValue(value);
-                }}
-                onBlur={() => {}}
-              />
-            </div>
-            <div style={{ padding: '0 2%' }}>
-              <CustomInput
-                id="tres"
-                value={searchValue}
-                placeholder="Buscar 3"
-                onChange={(event, value) => {
-                  setSearchValue(value);
-                }}
-                onBlur={() => {}}
-              />
-            </div>
-            */}
-            </div>
-            <div
-              id="text-box"
-              style={{ padding: '1% 2%', width: '95%', height: '78%', overflowY: 'auto' }}
-            >
-              {//searchValue
-
-              isNil(currentHistoryData) ? (
-                isNil(historiesArray) === false &&
-                isEmpty(historiesArray) === false &&
-                historiesArray.filter(filterBy(searchValue)).map(item => {
-                  return (
-                    <div
-                      id={item.id}
-                      key={item.id}
-                      onClick={() => {
-                        setCurrentScrolltop(document.getElementById('text-box').scrollTop);
-                        onGetHistoryData(item.id);
-                        setTimeout(() => {
-                          document.getElementById('text-box').scroll(0, 0);
-                        }, 500);
-                      }}
-                      style={{
-                        display: 'inline-block',
-                        padding: '0 2%',
-                        margin: '0 5px',
-                        color: themeColorId === 0 ? '#e2dfdf' : 'black',
-                        width: '25%',
-                        minWidth: '150px'
-                      }}
-                    >
-                      <h4>{item.title}</h4>
-                      <p>{item.description}</p>
-                      <hr />
-                    </div>
-                  );
-                })
-              ) : (
-                <div
-                  style={{
-                    display: 'inline',
-                    padding: '0 2%',
-                    margin: '0 5px',
-                    width: '90%',
-                    minWidth: '150px'
-                  }}
-                  className={
-                    isNil(currentHistoryData) ? 'text-basic-box-color' : 'read-text-basic-box-color'
-                  }
-                >
-                  <div title="Cerrar" style={{}}>
-                    <div
-                      style={{
-                        backgroundColor: 'rgb(95 40 130)',
-                        textAlign: 'end',
-                        color: '#e2dfdf',
-                        borderRadius: '4px',
-                        padding: '10px'
-                      }}
-                      onClick={() => {
-                        document.getElementById('text-box').scroll(0, 0);
-                        setCurrentHistoryData(null);
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faWindowClose} />
-                    </div>
-                  </div>
-                  <div style={{ color: themeColorId === 0 ? '#e2dfdf' : 'black' }}>
-                    <h3>{currentHistoryData.title}</h3>
-                    <p
-                      style={{ textAlign: 'justify', textJustify: 'inter-word', fontSize: '1.2em' }}
-                    >
-                      {currentHistoryData.text}
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
+            <div style={{ padding: '1% 2%', display: 'flex', flexDirection: 'row' }} />
           </div>
         )}
       </ThemeContext.Consumer>
@@ -331,11 +214,11 @@ const HomePage = props => {
   );
 };
 
-HomePage.propTypes = {};
+Contact.propTypes = {};
 
-HomePage.defaultProps = {};
+Contact.defaultProps = {};
 
 export default connect(
   null,
   null
-)(HomePage);
+)(Contact);

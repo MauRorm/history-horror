@@ -1,9 +1,8 @@
 import HomePage from './pages/HomePage';
+import Contact from './pages/Contact';
 import NotFoundPage from './pages/NotFoundPage';
-import ArticleListPage from './pages/ArticleListPage';
 import App from './App';
 import React from 'react';
-
 
 export default [
   {
@@ -12,23 +11,23 @@ export default [
       {
         component: HomePage,
         path: '/',
-        exact: true,
+        exact: true
       },
       {
         path: '/about',
         component: HomePage,
-        exact: true,
+        exact: true
       },
       {
         path: '/notice',
         component: HomePage,
-        exact: true,
+        exact: true
       },
       {
         path: '/contact',
-        component: HomePage,
-        exact: true,
-      },
+        component: Contact,
+        exact: true
+      }
     ]
   }
 ];

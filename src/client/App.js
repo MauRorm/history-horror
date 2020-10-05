@@ -49,13 +49,14 @@ const App = ({ route }) => {
                       </Link>
                     </li>
                   </a>
+                  {/*
                   <a>
                     <li>
                       <Link to="/notice" className="link">
                         Noticias
                       </Link>
                     </li>
-                  </a>
+                  </a>*/}
                   <a>
                     <li>
                       <Link to="/contact" className="link">

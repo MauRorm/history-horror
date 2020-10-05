@@ -324,8 +324,8 @@ const HomePage = props => {
                 </div>
               )}
             </div>
-            <p style={{ color: themeColorId === 0 ? '#e2dfdf' : 'black', textAlingn: 'end' }}>
-              v 0.7
+            <p style={{ color: themeColorId === 0 ? '#e2dfdf' : 'black', textAlign: 'end' }}>
+              v 0.9
             </p>
           </div>
         )}

@@ -324,6 +324,9 @@ const HomePage = props => {
                 </div>
               )}
             </div>
+            <p style={{ color: themeColorId === 0 ? '#e2dfdf' : 'black', textAlingn: 'end' }}>
+              v 0.7
+            </p>
           </div>
         )}
       </ThemeContext.Consumer>

@@ -60,14 +60,14 @@ const Contact = props => {
               <br />
               <p style={{ textAlign: 'justify', textJustify: 'inter-word', fontSize: '1.2em' }}>
                 {`Para poder publicar tu anéctota o historia contactanos en los medios que mencionamos aquí abajo, procura mandar el texto de tu relato, 
-                como quieres aparecer mencionado para darte el crédito de tu historia(en caso de que quieras mencionarlo) y la ciudad en que ocurrió
-                (en caso de que quieras mencionarlo).`}
+                `}
+                <strong
+                  style={{ color: '#fbb6b6' }}
+                >{` te recomendamos no dar datos personales o cambiar los nombres por privacidad tuya, por eso mismo no pedimos bajo ninguna circunstanía datos ni almacenamos cookies o inicio de sesión. De todos modos nosotros cambiaremos el nombre de las personas al publicar la historía, por seguridad.`}</strong>
               </p>
               <br />
               <ul>
-                <li>WhatsApp: ******</li>
-                <li>Email: *******</li>
-                <li>Facebook: ******</li>
+                <li>Email: casa.paranormal.mx@gmail.com</li>
               </ul>
             </div>
           </div>

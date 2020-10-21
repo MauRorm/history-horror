@@ -59,15 +59,22 @@ const Contact = props => {
               <h3>{'Contacto'}</h3>
               <br />
               <p style={{ textAlign: 'justify', textJustify: 'inter-word', fontSize: '1.2em' }}>
-                {`Para poder publicar tu anéctota o historia contactanos en los medios que mencionamos aquí abajo, procura mandar el texto de tu relato, 
-                `}
+                {`Para poder publicar tu anéctota o historia contactanos vía Facebook. Te recomendamos omitir o cambiar datos personales como nombres.`}
                 <strong
                   style={{ color: '#fbb6b6' }}
-                >{` te recomendamos no dar datos personales o cambiar los nombres por privacidad tuya, por eso mismo no pedimos bajo ninguna circunstanía datos ni almacenamos cookies o inicio de sesión. De todos modos nosotros cambiaremos el nombre de las personas al publicar la historía, por seguridad.`}</strong>
+                >{` NO RECABAMOS LAS HISTORIAS POR OTROS MEDIOS.`}</strong>
               </p>
               <br />
               <ul>
-                <li>Email: casa.paranormal.mx@gmail.com</li>
+                <li>
+                  Facebook:{' '}
+                  <a
+                    href="https://www.facebook.com/Casa-Paranormal-106726387890090"
+                    target="_blank"
+                  >
+                    https://www.facebook.com/Casa-Paranormal
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

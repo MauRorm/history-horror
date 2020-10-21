@@ -47,12 +47,6 @@ const globalHistories = [
     title: 'Anécdota México 4',
     byUser: 'Anónimo',
     text: `Hace unos años que una figura con forma humana pero sin facciones y gris me acosaba, era como un adulto delgado dentro de un traje de tela ajustado, cuando estaba ocupado me sentía incomodo y cuando volteaba la mirada veía a la figura azomandose, se ocultaba rápido tras alguna pared. Así era seguido en las noches, de día, a cualquier hora basicamente, pero en las madrugadas que iba al baño francamente si me ponía nervioso. Tiene años que lo deje de ver, pero hace poco vi una forma similar pero como de un niño, color café cartón y la cabeza parecía una bola de periódico, se asomo mientras estaba con mi lap haciendo home office.`
-  },
-  {
-    id: '005',
-    title: 'Anécdota México 5',
-    byUser: 'Anónimo',
-    text: `d`
   }
 ];
 

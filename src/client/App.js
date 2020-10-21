@@ -10,8 +10,18 @@ import ThemeContext from './context/themeTextColor';
 
 const App = ({ route }) => {
   const [themeTextColor, setThemeTextColor] = useState(0);
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
   return (
-    <div style={{ height: '100%', width: '100%' }}>
+    <div
+      style={{ height: '100%', width: '100%' }}
+      onClick={e => {
+        const element = e.target || e.srcElement;
+        if ((isOpenMenu && element.id !== 'openMenu') || (isOpenMenu && element.id !== 'menu')) {
+          setIsOpenMenu(false);
+          document.getElementById('openMenu').click();
+        }
+      }}
+    >
       <ThemeContext.Provider value={themeTextColor}>
         <Header
           themeTextColor={themeTextColor}
@@ -28,7 +38,13 @@ const App = ({ route }) => {
           <div style={{ top: '15px', position: 'fixed', zIndex: '1' }}>
             <nav role="navigation" style={{ position: 'absolute', height: '100%' }}>
               <div id="menuToggle" style={{ position: 'absolute', height: '100%' }}>
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  id="openMenu"
+                  onClick={() => {
+                    setIsOpenMenu(!isOpenMenu);
+                  }}
+                />
 
                 <span />
                 <span />

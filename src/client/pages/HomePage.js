@@ -15,7 +15,8 @@ import {
   faCoffee,
   faVolumeMute,
   faVolumeUp,
-  faWindowClose
+  faWindowClose,
+  faUndo
 } from '@fortawesome/free-solid-svg-icons';
 import ThemeContext from '../context/themeTextColor';
 /*
@@ -47,6 +48,25 @@ const globalHistories = [
     title: 'Anécdota México 4',
     byUser: 'Anónimo',
     text: `Hace unos años que una figura con forma humana pero sin facciones y gris me acosaba, era como un adulto delgado dentro de un traje de tela ajustado, cuando estaba ocupado me sentía incomodo y cuando volteaba la mirada veía a la figura azomandose, se ocultaba rápido tras alguna pared. Así era seguido en las noches, de día, a cualquier hora basicamente, pero en las madrugadas que iba al baño francamente si me ponía nervioso. Tiene años que lo deje de ver, pero hace poco vi una forma similar pero como de un niño, color café cartón y la cabeza parecía una bola de periódico, se asomo mientras estaba con mi lap haciendo home office.`
+  },
+  {
+    id: '005',
+    title: 'Anécdota México 5',
+    byUser: 'Anónimo',
+    text: `Cuando era chico, muchas noches iba a dormir a la habitación de mis padres, ya que ellos tenían televisión y yo no, me sentaba a ver la televisión todas las noches.
+    En alguna de tantas ocasiones escuché un ruido bajo las escaleras, había un hueco debajo de ellas que daba a otro cuatro, como muchas veces ignoré el ruido pensando que podía ser cualquier cosa, hasta que cierto día escuché ese mismo ruido y me encontraba en la habitación de mis padres con la puerta abierta, eran como las 8 pm y las luces estaban apagadas solo iluminando el cuarto por la luz de la tv, cuando en la entrada ví un ser completamente negro sin ningún rasgo o rostro visible de aprox de casi 2 metros de altura y de complexión delgada, vi esta silueta tan claramente porque reflejó la luz de la televisión, estuvo ahí unos 9 segundosm traté de gritar pero se me fue la voz y mi cuerpo se paralizó, después reaccioné y en un parpadeo ya no estaba.`
+  },
+  {
+    id: '006',
+    title: 'Anécdota México 6',
+    byUser: 'Anónimo',
+    text: `A mi mamá siempre la ha seguido una sombra, desde que es pequeña y ella cuenta como unas cuantas veces a tomado la forma de algunos de sus seres cercanos. Cuando era muy niña, la sombra se transformó con caracteristicas fisica de su vecinito Juan, estuvieron toda la tarde jugando, ella creyó que solo fueron unas dos horas, pero cuando entro en razón escucho los gritos de mi abuela buscandola con el resto de los vecinos por toda la urbanización, ella le explico a mi abuela (que estaba muy molesta) que solo había jugado con Juan, a lo que mi abuela respondió que eso era imposible porque Juan estaba en el grupo que la estaba buscando. La encontraron cerca del rio, ya pasada las 7 de la noche y justo cuando pensaba entrar al agua porque Juan (la sombra) estaba dentro del agua llamandola a que entrara. La sombra sigue con ella, yo la he visto y mis hermanos también, hemos crecido sabiendo siempre que Juan está con ella y con nosotros. Esa sombra nunca nos ha hecho daño, a veces  solo la sientes cerca o como hace sonidos por la casa. Juan abre y cierra puertas, se sienta en la cama, puedes verlo como niño, joven o adulto. a veces es negra la sombra y otras blanca. Hemos tenido visita de personas que tienen algún poder con entidades y sin decirle nada sobre Juan, nos preguntan si con nosotros vive un niño, mi mamá siempre le pregunta porque lo dicen (ella sabe que vieron a Juan) y nos responden, es que vi un niño corriendo, otros dicen que lo ven comiendo con mi perrita. Y a todos los que se quedan en mi casa a dormir por primera vez, se levantan al otro dia con historias de que alguien les hablo al oido, que mi perrita ladró en la madrugada hacia la puerta como impidiendo que alguien se acercara o que sintieron como si alguien se acosto en la cama. Mami siempre les dice que Juan les da la bienvenida.`
+  },
+  {
+    id: '007',
+    title: 'Anécdota México 7',
+    byUser: 'Anónimo',
+    text: `Cuando tenía como 9 años dormía en la sala en el sillón mediano ya que mi papá dormía en el más grande, ese día recuerdo que él no estaba ya que le tocaba trabajar de noche y pues me tocaba dormir sola eran como las 2 de la mañana masomenos yo estaba tapada con un montón de cobijas ya que hacía bastante frío y estaba acostada boca abajo y de repente sentí que me tocaron la espalda muy fuerte así que me voltee y me destape la cabeza para ver quien era solo vi una sombra negra de un niño pequeño asomándose por la puerta que da para la cocina yo confundida sin saber que hacer pregunte que quien era y pues no me contesto solo se  me quedó viendo por 5 segundos y se fue, yo me levante rápidamente a seguirlo y cuando llegue a la cocina no había absolutamente nadie, desde ese dia nunca e tenido una respuesta de qué fue lo que pasó cómo pudo haber desaparecido de la  nada no pudo haber corrido ya que hubiera escuchado ruido y no  se escuchó absolutamente nada y pues cada vez que cuento esta historia se quedan en shock pero pues ahora se que tal vez me paso eso...`
   }
 ];
 
@@ -246,6 +266,8 @@ const HomePage = props => {
                         setCurrentHistoryData(null);
                       }}
                     >
+                      <FontAwesomeIcon icon={faUndo} />
+                      &nbsp;&nbsp;
                       <FontAwesomeIcon icon={faWindowClose} />
                     </div>
                   </div>

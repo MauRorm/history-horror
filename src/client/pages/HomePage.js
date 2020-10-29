@@ -67,6 +67,48 @@ const globalHistories = [
     title: 'Anécdota México 7',
     byUser: 'Anónimo',
     text: `Cuando tenía como 9 años dormía en la sala en el sillón mediano ya que mi papá dormía en el más grande, ese día recuerdo que él no estaba ya que le tocaba trabajar de noche y pues me tocaba dormir sola eran como las 2 de la mañana masomenos yo estaba tapada con un montón de cobijas ya que hacía bastante frío y estaba acostada boca abajo y de repente sentí que me tocaron la espalda muy fuerte así que me voltee y me destape la cabeza para ver quien era solo vi una sombra negra de un niño pequeño asomándose por la puerta que da para la cocina yo confundida sin saber que hacer pregunte que quien era y pues no me contesto solo se  me quedó viendo por 5 segundos y se fue, yo me levante rápidamente a seguirlo y cuando llegue a la cocina no había absolutamente nadie, desde ese dia nunca e tenido una respuesta de qué fue lo que pasó cómo pudo haber desaparecido de la  nada no pudo haber corrido ya que hubiera escuchado ruido y no  se escuchó absolutamente nada y pues cada vez que cuento esta historia se quedan en shock pero pues ahora se que tal vez me paso eso...`
+  },
+  {
+    id: '008',
+    title: 'Anécdota México 8',
+    byUser: 'Anónimo',
+    text: `Yo una vez tuve una parálisis y lo unico que llegué a ver fue a mi perro entrando a mi habitación, justo al lado de mi cama rodeo algo. No había nada ahí pero el caminó hacia un lado como si estuviera esquivando algo, como si algo frente a mi cama obstaculizara su camino.`
+  },
+  {
+    id: '009',
+    title: 'Anécdota México 9',
+    byUser: 'Anónimo',
+    text: `A mí hace casi 3 años me pasó que en la casa de mi abuela, que por lo general pasan cosas extrañas, me dio parálisis de sueño, en eso que no me podía mover, sentí que alguien pequeño se sentó en mi cama y luego me abrazo por la espalda, no podía verlo, pero sentía como me respiraba y fue muy aterrador, cuando me desperté vi que mi sabana avía quedado en el suelo y jamás me pasa eso porque siempre me acobijo con ella y nunca termina haci... Fue espeluznante`
+  },
+  {
+    id: '010',
+    title: 'Anécdota México 10',
+    byUser: 'Anónimo',
+    text: `Yo una vez tuve una parálisis y lo unico que llegué a ver fue a mi perro entrando a mi habitación, justo al lado de mi cama rodeo algo. No había nada ahí pero el caminó hacia un lado como si estuviera esquivando algo, como si algo frente a mi cama obstaculizara su camino.`
+  },
+  {
+    id: '011',
+    title: 'Amigo imaginario 1',
+    byUser: 'Anónimo',
+    text: `Yo tuve uno cuando estaba chiquita como de 5 años pero yo no me acuerdo pero mi familia me cuenta que se llamaba "Maco" y a mi me asustaba una vez me dijeron que yo dije que había una mujer colgada por la ventana y que Maco la había colgado, que bueno que yo no me acuerdo.`
+  },
+  {
+    id: '012',
+    title: 'amigo imaginario 2',
+    byUser: 'Anónimo',
+    text: `Yo cuando tenía 5 años tenía una amiga imaginaria,como era muy tímida y no tenía amigos me ponía a jugar con ella,después de unas semanas me empezó a sangrar la nariz casi todos los días,mi mamá asustada decidió llevarme al hospital pero eso no ayudó, entonces mi mamá optó por llevarme a qué me hicieran una limpia y resultó que mi supuesta amiga imaginaria era un fantasma de una niña que me lastimaba y eso provocaba mi sangrado`
+  },
+  {
+    id: '013',
+    title: 'Anécdota México 11',
+    byUser: 'Anónimo',
+    text: `Yo una vez tuve una parálisis y lo unico que llegué a ver fue a mi perro entrando a mi habitación, justo al lado de mi cama rodeo algo. No había nada ahí pero el caminó hacia un lado como si estuviera esquivando algo, como si algo frente a mi cama obstaculizara su camino.`
+  },
+  {
+    id: '014',
+    title: 'Anécdota México 12',
+    byUser: 'Anónimo',
+    text: `Yo ví a mi bisabuelo fallecido sin siquiera conocerlo. Y hablé con él, cuando mi mamá vino a ver con quién hablaba yo le dije "con mi amigo Martín, solo que tiene un problema no tiene piernas..... " Y mi bisabuelo Martín la cual yo no conocía tiempo antes le habían amputado las piernas y yo no sabía nada sobre él..........`
   }
 ];
 
@@ -290,7 +332,7 @@ const HomePage = props => {
                 fontSize: '.8em'
               }}
             >
-              v0.10
+              v0.15
             </p>
           </div>
         )}

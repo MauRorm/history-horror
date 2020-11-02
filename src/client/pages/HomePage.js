@@ -109,7 +109,47 @@ const globalHistories = [
     title: 'Anécdota México 12',
     byUser: 'Anónimo',
     text: `Yo ví a mi bisabuelo fallecido sin siquiera conocerlo. Y hablé con él, cuando mi mamá vino a ver con quién hablaba yo le dije "con mi amigo Martín, solo que tiene un problema no tiene piernas..... " Y mi bisabuelo Martín la cual yo no conocía tiempo antes le habían amputado las piernas y yo no sabía nada sobre él..........`
+  },
+  {
+    id: '015',
+    title: 'Anécdota México 13',
+    byUser: 'Anónimo',
+    text: `En el edificio donde vivo, en el departamento que está al final del pasillo, vivía una señora y un señor que eran hermanos. El señor en especial, tenía problemas en la columna y le costaba caminar erguido.
+    Hace un año justamente, iba saliendo para ir a trabajar, como casi todas las mañanas compartíamos elevador, le abrí las puertas para que pudiera pasar y nos quedamos dentro del elevador solos. Se volteó y me dijo "ya es hora de ir a trabajar, niña. Me saludas a tus papás, espero que estén bien. Nos vemos" casi no hablaba como era de costumbre,  me sorprendió que esta vez hablara con claridad. Me despedí de él mientras lo ayudaba a salir y le deseé un buen día.
+    Me fui rápido por que ya era algo tarde, lo raro es que no oí sus pasos lentos detrás de mí.
+    Ese día por la noche, les dije a mis papás que el señor los mandaba saludar y mi mamá se quedó en blanco. 
+    Me dijo que ese señor ya llevaba 4 semanas de fallecido.
+    No me lo creí, se veía como cualquier otro día.
+    Me dijeron que seguramente venía a cuidar a su hermana que también estaba delicada de salud.
+    Ya lo he visto salir del elevador, solito hace 3 meses.
+    Yo sí creo cuando dicen que vienen a cuidarnos los que ya se fueron.`
+  },
+  {
+    id: '016',
+    title: 'Anécdota México 14',
+    byUser: 'Anónimo',
+    text: `Hace unos días escuchamos que una persona gritó al fondo del túnel de una estación de la línea naranja, incluso los policías ordenaron parar los vagones mientras rápidamente las mujeres policía corrían a acercarse a ayudar, fue un grito desgarrador de terror y dolor que a todos nos sorprendió, fue tal que hasta yo me asusté e incluso rápidamente se movilizaron los policías por lo mismo, llegaron paramédicos y el equipo de rescate, por radio se comunicaron con el conductor del tren y el conductor preguntó qué era lo que pasaba, por que había frenado todos los trenes y bla bla bla 30 minutos tardó en total, no sé encontró nada, ni la persona que gritó, ni rastros de sangre por algún accidente que haya sucedido ni nada apenas escuchamos eso por la radio del policía e inmediatamente nos quedamos congelados.`
+  },
+  {
+    id: '017',
+    title: 'Anécdota México 15',
+    byUser: 'Anónimo',
+    text: `Buenas noches,mi nombre es Armando y espero la pasen bien en estos tiempos de encierro ya que es algo tedioso, pero bueno para quienes no podemos dejar de laborar pues tenemos que salir a diario exponiendonos a las cosas cotidianas y no tan frecuentes en la ciudad y tal vez preguntarán por qué digo eso de "no tan frecuentes" y me refiero a esas historias que suceden que nadie cree a veces, específicamente las del metro y es que por más que uno piense que no podrá llegar a ver o coincidir con algún relato de aquí, créame que estaba en un grave error,  trabajo en la colonia del valle cerca del metrobus Ciudad de los deportes en un restaurante y ahí el servicio es todo para llevar, por ciertas cuestiones modificaron el horario del lugar de 12 am a 11 pm pues antes era de 8 am a 8 pm. Hay días que el servicio es pesado y por eso me quedo tarde y aún que rasguñando alcance el último metro de Observatorio a Pantitlán y lo tomé justo en Insurgentes de la línea Rosa. llegue corriendo y como pude le puse saldo a mi tarjeta, corrí y me fui casí al fondo del andén pegado a la zona exclusiva de mujeres, estaba ahí parado solo, acompañado de unos cuantos usuarios, 7 cuando mucho, pasó el último tren hacía Observatorio y quedamos esparcidos en el andén dirección Pantitlán é inmerso en mi música tenía poca atención alrededor mío pero de repente sentí como si una cortina pesada cayera encima de mi y se sintió un olor muy pesado y hediondo, pensé que era mi cansancio pero al voltear a ver el túnel se iluminó como si viniera a lo lejos el tan anhelado metro pero grande fue mi sorpresa cuando vi que se paró a mitad de camino y eso no era el metro pero se veía como la luz de sus faros de los nuevos vagones pero al bajar la vista al riel,ahí vi como estaba una "persona" con el pelo tapándole la cara pero eso sí piel blanca muy blanca,estaba en posición de rodillas pegadas al pecho y sentí un poco de escalofrío recorrer mi espalda y aún que no es la primera vez que veo algo de este tipo el estar distraído verla a unos metros fue algo impresionante y difícil de digerir y aunque solo fueron segundo sentí como se detuviera el tiempo y en cuanto pude reaccionar del shock me fui yendo más al centro de la estación cerca de las escaleras pero al caminar y darle la espalda sentí su mirada clavada en mi y como venía cerca a cada paso que daba sentía que iba atrás de mí pero para mí fortuna el tren llegó y sentir esa brisa de arribo que hace el metro fue como respirar sin esa pesadez de la cortina,me metí al vagón y por fortuna estaba con gente al interior y me sentí un poco más tranquilo pero no dejaba de pensar en esa cosa que vi,se que no seré el último en verla pero espero sea de los pocos muy pocos que la alcanzaron a ver.`
   }
+  /*
+  {
+    id: '018',
+    title: 'Anécdota México 16',
+    byUser: 'Anónimo',
+    text: `xxxxxxxxxxx`
+  },
+  {
+    id: '018',
+    title: 'Anécdota México 17',
+    byUser: 'Anónimo',
+    text: `xxxxxxxxxxx`
+  },
+  */
 ];
 
 const HomePage = props => {
@@ -332,7 +372,7 @@ const HomePage = props => {
                 fontSize: '.8em'
               }}
             >
-              v0.15
+              Última actualización: 01/11/2020 10:40 pm
             </p>
           </div>
         )}

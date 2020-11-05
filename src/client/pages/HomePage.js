@@ -135,6 +135,24 @@ const globalHistories = [
     title: 'Anécdota México 15',
     byUser: 'Anónimo',
     text: `Buenas noches,mi nombre es Armando y espero la pasen bien en estos tiempos de encierro ya que es algo tedioso, pero bueno para quienes no podemos dejar de laborar pues tenemos que salir a diario exponiendonos a las cosas cotidianas y no tan frecuentes en la ciudad y tal vez preguntarán por qué digo eso de "no tan frecuentes" y me refiero a esas historias que suceden que nadie cree a veces, específicamente las del metro y es que por más que uno piense que no podrá llegar a ver o coincidir con algún relato de aquí, créame que estaba en un grave error,  trabajo en la colonia del valle cerca del metrobus Ciudad de los deportes en un restaurante y ahí el servicio es todo para llevar, por ciertas cuestiones modificaron el horario del lugar de 12 am a 11 pm pues antes era de 8 am a 8 pm. Hay días que el servicio es pesado y por eso me quedo tarde y aún que rasguñando alcance el último metro de Observatorio a Pantitlán y lo tomé justo en Insurgentes de la línea Rosa. llegue corriendo y como pude le puse saldo a mi tarjeta, corrí y me fui casí al fondo del andén pegado a la zona exclusiva de mujeres, estaba ahí parado solo, acompañado de unos cuantos usuarios, 7 cuando mucho, pasó el último tren hacía Observatorio y quedamos esparcidos en el andén dirección Pantitlán é inmerso en mi música tenía poca atención alrededor mío pero de repente sentí como si una cortina pesada cayera encima de mi y se sintió un olor muy pesado y hediondo, pensé que era mi cansancio pero al voltear a ver el túnel se iluminó como si viniera a lo lejos el tan anhelado metro pero grande fue mi sorpresa cuando vi que se paró a mitad de camino y eso no era el metro pero se veía como la luz de sus faros de los nuevos vagones pero al bajar la vista al riel,ahí vi como estaba una "persona" con el pelo tapándole la cara pero eso sí piel blanca muy blanca,estaba en posición de rodillas pegadas al pecho y sentí un poco de escalofrío recorrer mi espalda y aún que no es la primera vez que veo algo de este tipo el estar distraído verla a unos metros fue algo impresionante y difícil de digerir y aunque solo fueron segundo sentí como se detuviera el tiempo y en cuanto pude reaccionar del shock me fui yendo más al centro de la estación cerca de las escaleras pero al caminar y darle la espalda sentí su mirada clavada en mi y como venía cerca a cada paso que daba sentía que iba atrás de mí pero para mí fortuna el tren llegó y sentir esa brisa de arribo que hace el metro fue como respirar sin esa pesadez de la cortina,me metí al vagón y por fortuna estaba con gente al interior y me sentí un poco más tranquilo pero no dejaba de pensar en esa cosa que vi,se que no seré el último en verla pero espero sea de los pocos muy pocos que la alcanzaron a ver.`
+  },
+  {
+    id: '019',
+    title: 'Anécdota México 16',
+    byUser: 'Anónimo',
+    text: `Cuando yo iba como en sexto semestre, nos tocó hacer prácticas y estábamos en el hospital y para la despedida llevamos pastel a los enfermeros, pero el festejo lo hicimos en el 2do piso del hospital (solo eran 2 pisos) y como no todos podían ir, nosotros bajamos a para llevarlos al servicio y cuando íbamos a bajar escuchamos que se abrió el elevador y vimos que un hombre vestido de intendencia se subió y nosotros corrimos para alcanzarlo y que no se cerraran las puertas y cuando llegamos, oh sorpresa ¡NO HABIA NADIE! cabe aclarar que las 3 compañeras que íbamos lo vimos y es el hospital en que más apariciones y cosas paranormales se han visto.`
+  },
+  {
+    id: '020',
+    title: 'Anécdota México 17',
+    byUser: 'Anónimo',
+    text: `De un hospital de la ciudad de México me gustaría platicarles extraños sucesos que me pasaron ahí; pero a todo el demás personal ya le parecía normal.... pues bueno, yo ingresé al instituto apenas hace unos meses,, ahí varios compañeros ya me habían dicho que "espantan" en las noches, yo hice caso omiso, pero en una ocasión, aborde el elevador yo sola, una vez dentro del elevador, empecé a escuchar llantos de alguien, el miedo invadió mi cuerpo y no me moví en ningún momento, al llegar a mi piso, en cuanto se abrieron las puertas salí corriendo.`
+  },
+  {
+    id: '021',
+    title: 'Anécdota México 18  ',
+    byUser: 'Anónimo',
+    text: `En otra ocasión, en ese mismo hospital; en uno de los pisos de pediatría, pase a tomar signos a mis niños, lo curioso fue que en una cuna había una señora cuidando al bebe, yo me le acerque y le dije que le iba a tomar signos al niño, la señora no me contestó y en ningún momento vi su cara, pero me percate que era mayor por la ropa que traía; después llegó a la visita la mamá del niño, yo muy indiscreta le pregunte si la otra señora ya se había ido, ella sorprendida me pregunto ¿cuál señora?, y yo le dije de la señora que vi mas temprano, ella me dijo que era imposible, ya que ella se encontraba sola, venia de Zacatecas con su bebe ella sola, pues su familia no la pudo acompañar, yo todavía insistiendo le describí a ropa de la señora, a lo que con la voz entrecortada y los ojos llorosos la señora me dijo que era su mamá, y que ya había fallecido.`
   }
   /*
   {
@@ -372,7 +390,7 @@ const HomePage = props => {
                 fontSize: '.8em'
               }}
             >
-              Última actualización: 01/11/2020 10:40 pm
+              Última actualización: 05/11/2020 01:05 pm
             </p>
           </div>
         )}

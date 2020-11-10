@@ -15,6 +15,7 @@ const App = ({ route }) => {
     <div
       style={{ height: '100%', width: '100%' }}
       onClick={e => {
+        return;
         const element = e.target || e.srcElement;
         if ((isOpenMenu && element.id !== 'openMenu') || (isOpenMenu && element.id !== 'menu')) {
           setIsOpenMenu(false);
@@ -52,14 +53,24 @@ const App = ({ route }) => {
 
                 <ul id="menu" style={{ height: window.innerHeight }}>
                   <a>
-                    <li>
+                    <li
+                      onClick={() => {
+                        setIsOpenMenu(false);
+                        document.getElementById('openMenu').click();
+                      }}
+                    >
                       <Link to="/" className="link">
                         Historias
                       </Link>
                     </li>
                   </a>
                   <a>
-                    <li>
+                    <li
+                      onClick={() => {
+                        setIsOpenMenu(false);
+                        document.getElementById('openMenu').click();
+                      }}
+                    >
                       <Link to="/about" className="link">
                         Acerca de nosotros
                       </Link>
@@ -74,7 +85,12 @@ const App = ({ route }) => {
                     </li>
                   </a>*/}
                   <a>
-                    <li>
+                    <li
+                      onClick={() => {
+                        setIsOpenMenu(false);
+                        document.getElementById('openMenu').click();
+                      }}
+                    >
                       <Link to="/contact" className="link">
                         Contactanos
                       </Link>
@@ -91,6 +107,12 @@ const App = ({ route }) => {
               height: '100%',
               width: '100%',
               backgroundColor: '#7053EA'
+            }}
+            onClick={() => {
+              if (isOpenMenu) {
+                setIsOpenMenu(false);
+                document.getElementById('openMenu').click();
+              }
             }}
           >
             <ErrorBoundary>{renderRoutes(route.routes)}</ErrorBoundary>

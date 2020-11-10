@@ -153,6 +153,18 @@ const globalHistories = [
     title: 'Anécdota México 18  ',
     byUser: 'Anónimo',
     text: `En otra ocasión, en ese mismo hospital; en uno de los pisos de pediatría, pase a tomar signos a mis niños, lo curioso fue que en una cuna había una señora cuidando al bebe, yo me le acerque y le dije que le iba a tomar signos al niño, la señora no me contestó y en ningún momento vi su cara, pero me percate que era mayor por la ropa que traía; después llegó a la visita la mamá del niño, yo muy indiscreta le pregunte si la otra señora ya se había ido, ella sorprendida me pregunto ¿cuál señora?, y yo le dije de la señora que vi mas temprano, ella me dijo que era imposible, ya que ella se encontraba sola, venia de Zacatecas con su bebe ella sola, pues su familia no la pudo acompañar, yo todavía insistiendo le describí a ropa de la señora, a lo que con la voz entrecortada y los ojos llorosos la señora me dijo que era su mamá, y que ya había fallecido.`
+  },
+  {
+    id: '022',
+    title: 'Anécdota escuela',
+    byUser: 'Anónimo',
+    text: `Mi tío fue velador durante 13 años en una secundaria, hace aproximadamente 3 años lo cambiaron al puesto de prefecto pero en esos años en los que estuvo de velador tuvo el turno de noche y le pasaron muchas cosas sin explicación lógica, en una ocasión él estaba en un cuartito que tienen para los veladores donde hay casilleros, es una zona de descanso, nos cuenta que eran como las 11:30 de la noche y alguien comenzó a golpear la puerta pero al revisar no había nadie, el ambiente comenzó a ponerse pesado, sentía que alguien a sus espaldas lo veía, en eso comenzaron a ladrar los perros y los casilleros comenzaron a cerrarse con violencia, estos están en la parte de atrás y era imposible que alguien los hubiera movido ya que el estaba solo, como pudo se armó de valor y fue a revisar, no había nadie, cuando regresó a donde estaba sintió que alguien respiraba detrás de él, ya no aguantó mas, saco sus cosas y se fue a dormir a su troca (camioneta) que tenía camper y estaba acomodada con cobijas para poder acostarse, en otra ocasión se encontraba haciendo rondas y vió que un camión que utiliza la escuela para paseos escolares tenía los focos prendidos, fue a ver si había alguien y mientras se acercaba sintió que el ambiente se iba poniendo frío, subió al camión y no había nadie ni dentro ni cerca del camión, apagó los focos y bajo, se oían muchos perros ladrando, intentó calmarse y cuando estaba a algunos metros la luz se volvió a encender, fue entonces que se asustó de verdad y se encerró el resto de la noche en la sala de maestros, cabe destacar que esos focos tienen de esos interruptores de metal que son difíciles de accionar, nos comentó que días antes de que pasara todo eso, uno de los maestros había fallecido en un accidente automovilístico, creemos que fue él quien estaba prendiendo las luces. En esa escuela pasan muchas cosas por la noche, desde ruidos hasta cosas que se mueven, incluso una vez mi tío y un compañero suyo vieron una sombra que los vigilaba y se escondía a plena luz del día.`
+  },
+  {
+    id: '023',
+    title: 'Anécdota velador 1',
+    byUser: 'Anónimo',
+    text: `Estaba en una planta tratadora de aguas negras, obviamente no hay más que un par de pozos profundos y una máquina de tableros automáticos que se activan las 24 hrs. Era una constructora casas de interés social. Esa noche mi jefe me mandó allí de castigo por haber faltado, yo estaba acostado en una cama de madera, era un cuarto de unos dos por tres metros, sólo había espacio para la cama y el baño. Estaba recostado a medio dormir, de lado, viendo hacia la pared, digo a medio dormir por que tenía conciencia de mi alrededor en ese instante, cuándo de pronto siento un par de manos que me toman del brazo así cómo estaba de lado, al momento abro los ojos pero no pude moverme, quedé inmovilizado, y así en ese preciso instante algo que no se que habrá sido grita en mi oído, era un grito desgarrador, macabro lo describiría yo. Yo soy una persona escéptica, no creo en cosas de fantasmas o cosas de ese estilo,, pero en ese momento sentí un miedo cómo no había tenido en mucho tiempo, para ser sincero traté de rezar pero la situación me tenía bloqueado, igual sentí unas ganas de llorar, tenía tantas emociones juntas en un sólo un instante. Al momento de qué pasó eso ya pude moverme y quedé boca arriba, cómo en shock, lo único que pude ver fue una cruz de madera que estaba en la cabecera, que supongo no me sirvió de nada pues por lo que acaba de pasar, vi la hora y eran pasadas las 3 de la madrugada, cuando reaccione tomé el radio que estaba a mi lado y le hablé a mi Jefe de Turno, que necesitaba su presencia lo más pronto posible, cosa que para él era raro pues yo nunca lo molestaba ni reportaba, era raro que usara el radio. Llegó, me dijo que pasaba, que por que tenía esa cara, ya le conté lo sucedido y me dijo que sólo lo había soñado. Se quedó conmigo hasta pasadas las 7 de la mañana para que pudiera yo estar tranquilo. A las 7 de la mañana al llegar el personal de la planta, me dice el encargado, ahora que te pasó, no dormiste o por que traes esa cara, y le dije, ¿Pasan cosas aquí? A lo que me respondió cosas de qué, y le dije me asustaron, empezó a reírse y me dijo, no te saques de onda, varios han visto cosas aquí, no eres el primero, no pasa nada. Ese grito fue tan macabro que al turno siguiente cuándo empezó a oscurecer comencé a sentir miedo, estaba en una zona sin luz eléctrica, era una obra negra, lo que hice fue ponerme a mandar msjs y entretenerme con el celular para distraer mi mente. Jamás sabré qué fue ese grito en mi oído tan macabro ni qué eran esas manos que sentía me tenían del brazo.`
   }
   /*
   {
@@ -188,6 +200,79 @@ const HomePage = props => {
         };
       })
     );
+
+    const currentTime = moment();
+
+    const extra = moment().format('YYYY-MM-DD') + ' ';
+    const start_time = moment(extra + '18:00');
+    const end_time = moment(extra + '23:59');
+
+    const start_timeTwo = moment(extra + '00:00');
+    const end_timeTwo = moment(extra + '05:00');
+
+    if (
+      moment(currentTime).isBetween(start_time, end_time) ||
+      moment(currentTime).isBetween(start_timeTwo, end_timeTwo)
+    ) {
+      if (localStorage.getItem('isActiveTerrorMessage') !== 'true') {
+        setTimeout(() => {
+          let value = 'T';
+          setSearchValue(value);
+          localStorage.setItem('isActiveTerrorMessage', 'true');
+          setTimeout(() => {
+            value = value + 'E';
+            setSearchValue(value);
+            setTimeout(() => {
+              value = value + ' ';
+              setSearchValue(value);
+              setTimeout(() => {
+                value = value + 'O';
+                setSearchValue(value);
+                setTimeout(() => {
+                  value = value + 'B';
+                  setSearchValue(value);
+                  setTimeout(() => {
+                    value = value + 'S';
+                    setSearchValue(value);
+                    setTimeout(() => {
+                      value = value + 'E';
+                      setSearchValue(value);
+                      setTimeout(() => {
+                        value = value + 'R';
+                        setSearchValue(value);
+                        setTimeout(() => {
+                          value = value + 'V';
+                          setSearchValue(value);
+                          setTimeout(() => {
+                            value = value + 'A';
+                            setSearchValue(value);
+                          }, 800);
+                          setTimeout(() => {
+                            value = value + 'M';
+                            setSearchValue(value);
+                          }, 800);
+                          setTimeout(() => {
+                            value = value + 'O';
+                            setSearchValue(value);
+                          }, 800);
+                          setTimeout(() => {
+                            value = value + 'S';
+                            setSearchValue(value);
+                          }, 800);
+                          setTimeout(() => {
+                            setSearchValue('');
+                          }, 5000);
+                        }, 800);
+                      }, 800);
+                    }, 800);
+                  }, 800);
+                }, 800);
+              }, 800);
+            }, 800);
+          }, 2000);
+        }, 1300);
+      }
+    }
   }, []);
 
   const [historiesArray, setHistoriesArray] = useState([]);
@@ -390,7 +475,7 @@ const HomePage = props => {
                 fontSize: '.8em'
               }}
             >
-              Última actualización: 05/11/2020 01:05 pm
+              Última actualización: 09/11/2020 11:07 pm
             </p>
           </div>
         )}

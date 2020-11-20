@@ -170,7 +170,7 @@ const globalHistories = [
     id: '024',
     title: 'Después de fallecido fue a la oficina',
     byUser: 'Anónimo',
-    text: `En un edificio de oficinas en la CDMX, un empleado siempre llegaba a su oficina, pedía que se prendieran las luces y ventilación de dicha oficina, un día como cualquier otro llegó, saludó a su secretaria y pidió activar luces y ventilación de su oficina, despúes entró. En la noche de ese mismo día un policia tocó en la oficina porque no salía el empleado, cuando abrieron su sorpresa fue tal porque estaba vacía, jamas vieron salir al señor. Al siguiente día supieron que tenía algunas semanas de haber fallecido...`
+    text: `En un edificio de oficinas en la CDMX, un empleado siempre llegaba a su oficina, pedía que se prendieran las luces y ventilación de dicha oficina, un día como cualquier otro llegó, saludó a su secretaria y pidió activar luces y ventilación de su oficina, después entró. En la noche de ese mismo día un policía tocó en la oficina porque no salía el empleado, cuando abrieron su sorpresa fue tal porque estaba vacía, jamás vieron salir al señor. Al siguiente día supieron que tenía algunas semanas de haber fallecido...`
   },
   {
     id: '025',

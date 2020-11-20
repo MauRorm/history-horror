@@ -488,7 +488,7 @@ const HomePage = props => {
                 fontSize: '.8em'
               }}
             >
-              Última actualización: 09/11/2020 11:07 pm
+              Última actualización: 20/11/2020 01:03 pm
             </p>
           </div>
         )}

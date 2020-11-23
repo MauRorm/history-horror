@@ -16,7 +16,9 @@ import {
   faVolumeMute,
   faVolumeUp,
   faWindowClose,
-  faUndo
+  faUndo,
+  faStar,
+  faHome
 } from '@fortawesome/free-solid-svg-icons';
 import ThemeContext from '../context/themeTextColor';
 /*
@@ -178,14 +180,14 @@ const globalHistories = [
     byUser: 'Anónimo',
     text: `Cuando tenía como diez años mi mamá me llevó al sepelio de una vecina que había fallecido. El cementerio era en el pueblo, allá acostumbran a colocar rosarios, crucifijos y santos sobre las tumbas. Había un rosario muy lindo, me llamó la atención, lo tomé y me lo llevé para mi casa. Cuando llegue se lo mostré a mi mamá y ella me pegó muy duro y me hizo devolverlo, me tuvo que acompañar y en la entrada del cementerio mi mamá me hizo rezar el rosario con ella y pedir perdón al alma de donde yo lo había tomado, en la salida escuché una voz que me dijo “Muchas gracias, te acompañaré siempre”. Hoy tengo 62 años y todavía esa alma está conmigo y yo le rezo todos los días.Yo me siento feliz y nunca me ha pasado nada. Yo me fui de mi pueblo hace muchos años.
     `
+  },
+  {
+    id: '026',
+    title: 'Fantasma en videojuego',
+    byUser: 'Anónimo',
+    text: `Una ocasión ajustando en kinect (un aparato que capta en una cámara los movimientos de una o varias personas para jugar videojuegos), al lado de donde yo estaba sentado el Kinect detectó un fantasma que estaba sentado en el suelo y cuando veía la pantalla de mi televisión se podían ver las articulaciones del fantasma pero cuando miraba hacia donde estaba, no había nada. Me quedé mirando qué hacía, de repente apareció a lado de mí, intentó agarrar o tocar mi cara pero no sentía algo. Es la única ocasión que me ocurrió algo así, fue muy extraño.`
   }
   /*
-  {
-    id: '018',
-    title: 'Anécdota México 16',
-    byUser: 'Anónimo',
-    text: `xxxxxxxxxxx`
-  },
   {
     id: '018',
     title: 'Anécdota México 17',
@@ -201,6 +203,36 @@ const HomePage = props => {
   );
 
   const [currentScrolltop, setCurrentScrolltop] = useState(0);
+
+  const [idViewType, setIdViewType] = useState(0);
+
+  const [allMainStories, setAllMainStories] = useState(
+    isNil(localStorage.getItem('allStories')) === false &&
+      isEmpty(localStorage.getItem('allStories')) === false
+      ? JSON.parse(localStorage.getItem('allStories'))
+      : {}
+  );
+
+  const getMatchIsMain = () => {};
+
+  const getAllMainStories = (idHistory = null) => {
+    let isMain = false;
+    if (allMainStories[idHistory] === true) {
+      isMain = allMainStories[idHistory];
+    }
+    return isMain;
+  };
+
+  const setMainHistory = (idHistory = null) => {
+    const stories = { ...allMainStories };
+    if (isNil(stories[idHistory]) === false) {
+      stories[idHistory] = !stories[idHistory];
+    } else {
+      stories[idHistory] = true;
+    }
+    setAllMainStories(stories);
+    localStorage.setItem('allStories', JSON.stringify(stories));
+  };
 
   useEffect(() => {
     setHistoriesArray(
@@ -362,19 +394,67 @@ const HomePage = props => {
           >
             <div style={{ padding: '1% 2%', display: 'flex', flexDirection: 'row' }}>
               {isNil(currentHistoryData) && (
-                <div style={{ padding: '0 2%' }}>
-                  <CustomInput
-                    id="uno"
-                    value={searchValue}
-                    placeholder="Buscar"
-                    textFieldColor={themeColorId === 0 ? 'white' : '#0c0b0b'}
-                    onChange={(event, value) => {
-                      setSearchValue(value);
-                      sessionStorage.setItem('searchHistory', value);
-                    }}
-                    onBlur={(event, value) => {}}
-                  />
-                </div>
+                <>
+                  <div style={{ padding: '0 2%' }}>
+                    <CustomInput
+                      id="uno"
+                      value={searchValue}
+                      placeholder="Buscar"
+                      textFieldColor={themeColorId === 0 ? 'white' : '#0c0b0b'}
+                      onChange={(event, value) => {
+                        setSearchValue(value);
+                        sessionStorage.setItem('searchHistory', value);
+                      }}
+                      onBlur={(event, value) => {}}
+                    />
+                  </div>
+                  <div>
+                    <div
+                      title="Ver todos"
+                      style={{
+                        margin: '24px 20px 0px'
+                      }}
+                    >
+                      <div
+                        style={{
+                          backgroundColor:
+                            idViewType === 0 ? 'rgb(95 40 130)' : 'rgb(124 120 128 / 97%)',
+                          color: 'white',
+                          borderRadius: '4px',
+                          padding: '10px'
+                        }}
+                        onClick={() => {
+                          setIdViewType(0);
+                        }}
+                      >
+                        <FontAwesomeIcon style={{ color: 'white' }} icon={faHome} />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      title="Ver favoritos"
+                      style={{
+                        margin: '24px 10px 0px 0px'
+                      }}
+                    >
+                      <div
+                        style={{
+                          backgroundColor:
+                            idViewType === 1 ? 'rgb(95 40 130)' : 'rgb(124 120 128 / 97%)', //rgb(124 120 128 / 97%)
+                          color: 'white',
+                          borderRadius: '4px',
+                          padding: '10px'
+                        }}
+                        onClick={() => {
+                          setIdViewType(1);
+                        }}
+                      >
+                        <FontAwesomeIcon style={{ color: 'white' }} icon={faStar} />
+                      </div>
+                    </div>
+                  </div>
+                </>
               )}
 
               {/*<div style={{ padding: '0 2%' }}>
@@ -411,31 +491,61 @@ const HomePage = props => {
                 isNil(historiesArray) === false &&
                 isEmpty(historiesArray) === false &&
                 historiesArray.filter(filterBy(searchValue)).map(item => {
-                  return (
-                    <div
-                      id={item.id}
-                      key={item.id}
-                      onClick={() => {
-                        setCurrentScrolltop(document.getElementById('text-box').scrollTop);
-                        onGetHistoryData(item.id);
-                        setTimeout(() => {
-                          document.getElementById('text-box').scroll(0, 0);
-                        }, 500);
-                      }}
-                      style={{
-                        display: 'inline-block',
-                        padding: '0 2%',
-                        margin: '0 5px',
-                        color: themeColorId === 0 ? '#e2dfdf' : 'black',
-                        width: '25%',
-                        minWidth: '150px'
-                      }}
-                    >
-                      <h4>{item.title}</h4>
-                      <p>{item.description}</p>
-                      <hr />
-                    </div>
-                  );
+                  if (idViewType === 0) {
+                    return (
+                      <div
+                        id={item.id}
+                        key={item.id}
+                        onClick={() => {
+                          setCurrentScrolltop(document.getElementById('text-box').scrollTop);
+                          onGetHistoryData(item.id);
+                          setTimeout(() => {
+                            document.getElementById('text-box').scroll(0, 0);
+                          }, 500);
+                        }}
+                        style={{
+                          display: 'inline-block',
+                          padding: '0 2%',
+                          margin: '0 5px',
+                          color: themeColorId === 0 ? '#e2dfdf' : 'black',
+                          width: '25%',
+                          minWidth: '150px'
+                        }}
+                      >
+                        <h4>{item.title}</h4>
+                        <p>{item.description}</p>
+                        <hr />
+                      </div>
+                    );
+                  } else if (idViewType === 1) {
+                    if (allMainStories[item.id] === true) {
+                      return (
+                        <div
+                          id={item.id}
+                          key={item.id}
+                          onClick={() => {
+                            setCurrentScrolltop(document.getElementById('text-box').scrollTop);
+                            onGetHistoryData(item.id);
+                            setTimeout(() => {
+                              document.getElementById('text-box').scroll(0, 0);
+                            }, 500);
+                          }}
+                          style={{
+                            display: 'inline-block',
+                            padding: '0 2%',
+                            margin: '0 5px',
+                            color: themeColorId === 0 ? '#e2dfdf' : 'black',
+                            width: '25%',
+                            minWidth: '150px'
+                          }}
+                        >
+                          <h4>{item.title}</h4>
+                          <p>{item.description}</p>
+                          <hr />
+                        </div>
+                      );
+                    }
+                  }
                 })
               ) : (
                 <div
@@ -470,7 +580,26 @@ const HomePage = props => {
                     </div>
                   </div>
                   <div style={{ color: themeColorId === 0 ? '#e2dfdf' : 'black' }}>
-                    <h3>{currentHistoryData.title}</h3>
+                    <div style={{ display: 'flex' }}>
+                      <h3>{currentHistoryData.title}</h3>
+                      <div
+                        style={{
+                          margin: '20px 0px 0px 25px'
+                        }}
+                        onClick={() => {
+                          setMainHistory(currentHistoryData.id);
+                        }}
+                      >
+                        <FontAwesomeIcon
+                          style={{
+                            color: getAllMainStories(currentHistoryData.id)
+                              ? 'rgb(251 255 7)'
+                              : 'white'
+                          }}
+                          icon={faStar}
+                        />
+                      </div>
+                    </div>
                     <p
                       style={{ textAlign: 'justify', textJustify: 'inter-word', fontSize: '1.2em' }}
                     >
@@ -488,7 +617,7 @@ const HomePage = props => {
                 fontSize: '.8em'
               }}
             >
-              Última actualización: 20/11/2020 01:03 am
+              Última actualización: 22/11/2020 10:15 pm
             </p>
           </div>
         )}

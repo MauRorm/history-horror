@@ -189,10 +189,9 @@ const globalHistories = [
   },
   {
     id: '027',
-    title:
-      'Siendo estudiante, un doctor nos relató que en el hospital donde trabajaba pasaban muchas cosas paranormales. En una ocasión una mujer llegó a pedir consulta, ya en revisión le hicieron una exploración general pero no encontraron algo raro, en ello la doctora salió a buscar un estetoscopio porque el suyo lo había olvidado, cuando volvió ya no había nadie en el consultorio, la enfermera que cuidaba la entrada dice que nunca vió salir a la mujer, el consultorio no tiene otra salida. Definitivamente los hospitales o sanatorios tienen muchísimas historias así.',
+    title: 'Paciente Fantasma',
     byUser: 'Anónimo',
-    text: `xxxxxxxxxxx`
+    text: `Siendo estudiante, un doctor nos relató que en el hospital donde trabajaba pasaban muchas cosas paranormales. En una ocasión una mujer llegó a pedir consulta, ya en revisión le hicieron una exploración general pero no encontraron algo raro, en ello la doctora salió a buscar un estetoscopio porque el suyo lo había olvidado, cuando volvió ya no había nadie en el consultorio, la enfermera que cuidaba la entrada dice que nunca vió salir a la mujer, el consultorio no tiene otra salida. Definitivamente los hospitales o sanatorios tienen muchísimas historias así.`
   }
   /*
   {
@@ -655,7 +654,7 @@ const HomePage = props => {
                 fontSize: '.8em'
               }}
             >
-              Última actualización: 22/11/2020 10:15 pm
+              Última actualización: 08/12/2020 12:50 pm
             </p>
           </div>
         )}

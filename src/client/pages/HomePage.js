@@ -186,6 +186,13 @@ const globalHistories = [
     title: 'Fantasma en videojuego',
     byUser: 'Anónimo',
     text: `Una ocasión ajustando en kinect (un aparato que capta en una cámara los movimientos de una o varias personas para jugar videojuegos), al lado de donde yo estaba sentado el Kinect detectó un fantasma que estaba sentado en el suelo y cuando veía la pantalla de mi televisión se podían ver las articulaciones del fantasma pero cuando miraba hacia donde estaba, no había nada. Me quedé mirando qué hacía, de repente apareció a lado de mí, intentó agarrar o tocar mi cara pero no sentía algo. Es la única ocasión que me ocurrió algo así, fue muy extraño.`
+  },
+  {
+    id: '027',
+    title:
+      'Siendo estudiante, un doctor nos relató que en el hospital donde trabajaba pasaban muchas cosas paranormales. En una ocasión una mujer llegó a pedir consulta, ya en revisión le hicieron una exploración general pero no encontraron algo raro, en ello la doctora salió a buscar un estetoscopio porque el suyo lo había olvidado, cuando volvió ya no había nadie en el consultorio, la enfermera que cuidaba la entrada dice que nunca vió salir a la mujer, el consultorio no tiene otra salida. Definitivamente los hospitales o sanatorios tienen muchísimas historias así.',
+    byUser: 'Anónimo',
+    text: `xxxxxxxxxxx`
   }
   /*
   {
@@ -317,6 +324,37 @@ const HomePage = props => {
           }, 2000);
         }, 1300);
       }
+    }
+
+    function create_UUID() {
+      var dt = new Date().getTime();
+      var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (dt + Math.random() * 16) % 16 | 0;
+        dt = Math.floor(dt / 16);
+        return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16);
+      });
+      return uuid;
+    }
+
+    if (
+      isNil(localStorage.getItem('idUser')) === true ||
+      isEmpty(localStorage.getItem('idUser')) === true
+    ) {
+      const iduser = create_UUID();
+      localStorage.setItem('idUser', iduser);
+      axios
+        .post(`https://casa-paranormal.com/databaseconnect.php`, {
+          user: iduser,
+          lastDateConnected:
+            moment()
+              .format('YYYY-MM-DD HH:mm')
+              .toString() + ' -06:00',
+          createdDateUser:
+            moment()
+              .format('YYYY-MM-DD HH:mm')
+              .toString() + ' -06:00'
+        })
+        .then(res => {});
     }
   }, []);
 
